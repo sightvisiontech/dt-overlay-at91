@@ -1,0 +1,282 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+/*
+ * Flattened Image Tree file for SAMA5D27 WLSOM1 EK
+ *
+ * Copyright (C) 2019 Microchip Technology, Inc.
+ * Author: Eugen Hristev <eugen.hristev@microchip.com>
+ *
+ */
+/dts-v1/;
+
+/ {
+	description = "Microchip SAMA5D27 WLSOM1 ASHER FIT Image";
+	#address-cells = <1>;
+
+	images {
+		kernel {
+			description = "Linux4SAM Linux kernel";
+			data = /incbin/("./zImage");
+			type = "kernel";
+			arch = "arm";
+			os = "linux";
+			compression = "none";
+			load = <0x22000000>;
+			entry = <0x22000000>;
+			hash-1 {
+				algo = "crc32";
+			};
+			hash-2 {
+				algo = "sha1";
+			};
+		};
+
+		base_fdt {
+			description = "Flattened Device Tree blob";
+			data = /incbin/("./at91-sama5d27_wlsom1_asher.dtb");
+			type = "flat_dt";
+			arch = "arm";
+			compression = "none";
+			load = <0x23000000>;
+			hash-1 {
+				algo = "crc32";
+			};
+			hash-2 {
+				algo = "sha1";
+			};
+		};
+
+		fdt_isc {
+			description = "Device Tree blob ISC overlay";
+			data = /incbin/("./sama5d27_wlsom1_asher/sama5d27_wlsom1_asher_isc.dtbo");
+			type = "flat_dt";
+			arch = "arm";
+			compression = "none";
+			load = <0x23100000>;
+			hash-1 {
+				algo = "crc32";
+			};
+			hash-2 {
+				algo = "sha1";
+			};
+		};
+
+		fdt_ov7670 {
+			description = "Device Tree blob Ov7670 overlay";
+			data = /incbin/("./sama5d27_wlsom1_asher/sama5d27_wlsom1_asher_ov7670.dtbo");
+			type = "flat_dt";
+			arch = "arm";
+			compression = "none";
+			load = <0x23110000>;
+			hash-1 {
+				algo = "crc32";
+			};
+			hash-2 {
+				algo = "sha1";
+			};
+		};
+
+		fdt_ov7740 {
+			description = "Device Tree blob OV7740 overlay";
+			data = /incbin/("./sama5d27_wlsom1_asher/sama5d27_wlsom1_asher_ov7740.dtbo");
+			type = "flat_dt";
+			arch = "arm";
+			compression = "none";
+			load = <0x23120000>;
+			hash-1 {
+				algo = "crc32";
+			};
+			hash-2 {
+				algo = "sha1";
+			};
+		};
+
+		fdt_pda4 {
+			description = "Device Tree blob pda4300 overlay";
+			data = /incbin/("./sama5d27_wlsom1_asher/sama5d27_wlsom1_asher_pda4.dtbo");
+			type = "flat_dt";
+			arch = "arm";
+			compression = "none";
+			load = <0x23130000>;
+			hash-1 {
+				algo = "crc32";
+			};
+			hash-2 {
+				algo = "sha1";
+			};
+		};
+
+		fdt_pda5 {
+			description = "Device Tree blob pda5000 overlay";
+			data = /incbin/("./sama5d27_wlsom1_asher/sama5d27_wlsom1_asher_pda5.dtbo");
+			type = "flat_dt";
+			arch = "arm";
+			compression = "none";
+			load = <0x23140000>;
+			hash-1 {
+				algo = "crc32";
+			};
+			hash-2 {
+				algo = "sha1";
+			};
+		};
+
+		fdt_pda7 {
+			description = "Device Tree blob pda7000 overlay";
+			data = /incbin/("./sama5d27_wlsom1_asher/sama5d27_wlsom1_asher_pda7.dtbo");
+			type = "flat_dt";
+			arch = "arm";
+			compression = "none";
+			load = <0x23150000>;
+			hash-1 {
+				algo = "crc32";
+			};
+			hash-2 {
+				algo = "sha1";
+			};
+		};
+
+		fdt_pda7b {
+			description = "Device Tree blob pda7000b overlay";
+			data = /incbin/("./sama5d27_wlsom1_asher/sama5d27_wlsom1_asher_pda7b.dtbo");
+			type = "flat_dt";
+			arch = "arm";
+			compression = "none";
+			load = <0x23160000>;
+			hash-1 {
+				algo = "crc32";
+			};
+			hash-2 {
+				algo = "sha1";
+			};
+		};
+
+		fdt_ov5640 {
+			description = "Device Tree blob OV5640 overlay";
+			data = /incbin/("./sama5d27_wlsom1_asher/sama5d27_wlsom1_asher_ov5640.dtbo");
+			type = "flat_dt";
+			arch = "arm";
+			compression = "none";
+			load = <0x23190000>;
+			hash-1 {
+				algo = "crc32";
+			};
+			hash-2 {
+				algo = "sha1";
+			};
+		};
+
+		fdt_ptc {
+			description = "Device Tree blob PTC overlay";
+			data = /incbin/("./sama5d27_wlsom1_asher/sama5d27_wlsom1_asher_ptc.dtbo");
+			type = "flat_dt";
+			arch = "arm";
+			compression = "none";
+			load = <0x23170000>;
+			hash-1 {
+				algo = "crc32";
+			};
+			hash-2 {
+				algo = "sha1";
+			};
+		};
+
+		fdt_mt9v022 {
+			description = "Device Tree blob MT9V022 overlay";
+			data = /incbin/("./sama5d27_wlsom1_asher/sama5d27_wlsom1_asher_mt9v022.dtbo");
+			type = "flat_dt";
+			arch = "arm";
+			compression = "none";
+			load = <0x23200000>;
+			hash-1 {
+				algo = "crc32";
+			};
+			hash-2 {
+				algo = "sha1";
+			};
+		};
+
+		fdt_spi_click1 {
+			description = "Device Tree blob at25ff321a spi flash clickboard overlay";
+			data = /incbin/("./sama5d27_wlsom1_asher/sama5d27_wlsom1_asher_at25ff321a_click1.dtbo");
+			type = "flat_dt";
+			arch = "arm";
+			compression = "none";
+			load = <0x23210000>;
+			hash-1 {
+				algo = "crc32";
+			};
+			hash-2 {
+				algo = "sha1";
+			};
+		};
+	};
+
+	configurations {
+		default = "kernel_dtb";
+
+		kernel_dtb {
+			description = "Linux kernel and base FDT blob for SAMA5D27_WLSOM1_ASHER board";
+			kernel = "kernel";
+			fdt = "base_fdt";
+		};
+		base_dtb {
+			description = "FDT blob for base SAMA5D27_WLSOM1_ASHER board";
+			fdt = "base_fdt";
+		};
+
+		isc {
+			description = "FDT overlay blob for isc";
+			fdt = "fdt_isc";
+		};
+
+		ov7670 {
+			description = "FDT overlay blob for ov7670 sensor";
+			fdt = "fdt_ov7670";
+		};
+
+		ov7740 {
+			description = "FDT overlay blob for ov7740 sensor";
+			fdt = "fdt_ov7740";
+		};
+
+		ov5640 {
+			description = "FDT overlay blob for ov5640 sensor";
+			fdt = "fdt_ov5640";
+		};
+
+		mt9v022 {
+			description = "FDT overlay blob for mt9v022 sensor";
+			fdt = "fdt_mt9v022";
+		};
+
+		pda4 {
+			description = "FDT overlay blob for PDA TM4300 screen";
+			fdt = "fdt_pda4";
+		};
+
+		pda5 {
+			description = "FDT overlay blob for PDA TM5000 screen";
+			fdt = "fdt_pda5";
+		};
+
+		pda7 {
+			description = "FDT overlay blob for PDA TM7000 screen";
+			fdt = "fdt_pda7";
+		};
+
+		pda7b {
+			description = "FDT overlay blob for PDA TM7000B screen";
+			fdt = "fdt_pda7b";
+		};
+
+		ptc {
+			description = "FDT overlay blob for PTC";
+			fdt = "fdt_ptc";
+		};
+
+		spi_click1 {
+			description = "FDT overlay blob for at25ff321a spi flash clickboard (1)";
+			fdt = "fdt_spi_click1";
+		};
+	};
+};
